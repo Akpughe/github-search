@@ -35,8 +35,8 @@ const Navbar = () => {
           <img src="/logo.svg" alt="" />
         </div>
       </Link>
-      <div className="flex justify-center items-center sm:w-2/5 w-full">
-        <Searchbar width='w-full' />
+      <div className="flex justify-center items-center sm:w-1/2 w-full">
+        <Searchbar width='w-full' height="h-[50px]" />
       </div>
 
       <div className="sm:flex hidden items-center px-16 cursor-pointer">
