@@ -12,8 +12,8 @@ const search = () => {
         <div>
           <img src="/logo.svg" alt="" />
         </div>
-        <div className="sm:w-1/2 w-full">
-          <Searchbar />
+        <div className="sm:w-2/5 w-full">
+          <Searchbar height="h-[60px]" />
         </div>
         <Link href="/result">
           <div>
