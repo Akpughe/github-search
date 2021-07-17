@@ -7,12 +7,12 @@ body {
   font-family: 'DM Sans', sans-serif;
 }
 
-h1,h2,h3{
+h1,h2,h3,p,span{
   font-family: 'DM Sans', sans-serif;
 }
-span{
+/* span{
   font-family: 'Roboto', sans-serif;
-}
+} */
 
 a {
   color: inherit;
