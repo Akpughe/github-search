@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Searchbar = ({ width }) => {
+const Searchbar = ({ width, height }) => {
   return (
     <div className={`p-8 ${width}`}>
-      <div className="bg-white flex h-[50px] items-center border border-[#C4C4C4] rounded-full">
+      <div className={`bg-white flex ${height} items-center border border-[#C4C4C4] rounded-full`}>
         <input
           className="rounded-l-full w-full px-6  text-gray-700 leading-tight focus:outline-none"
           id="search"
