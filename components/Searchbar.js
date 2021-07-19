@@ -1,18 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const Searchbar = ({ width, height }) => {
+const Searchbar = ({ width, height, text, change, gsearch, w }) => {
+  // const [text, setText] = useState("")
   return (
     <div className={`p-8 ${width}`}>
-      <div className={`bg-white flex ${height} items-center border border-[#C4C4C4] rounded-full`}>
+      <div className={`bg-white flex ${height} ${w}  items-center border border-[#C4C4C4] rounded-full`}>
         <input
           className="rounded-l-full w-full px-6  text-gray-700 leading-tight focus:outline-none"
           id="search"
           type="text"
           placeholder="Search"
+          value={text}
+          onChange={change}
         />
 
         <div className="p-4">
-          <button className="text-white rounded-full p-2 focus:outline-none w-12 h-12 flex items-center justify-center">
+          <button onClick={gsearch} className="text-white rounded-full p-2 focus:outline-none w-12 h-12 flex items-center justify-center">
             <svg
               width="18"
               height="18"
