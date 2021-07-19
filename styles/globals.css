@@ -7,7 +7,11 @@ body {
   font-family: 'DM Sans', sans-serif;
 }
 
-h1,h2,h3,p,span{
+h1,
+h2,
+h3,
+p,
+span {
   font-family: 'DM Sans', sans-serif;
 }
 /* span{
@@ -21,4 +25,31 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.pagination {
+  @apply flex items-center justify-center py-5 text-[#B0B7C3];
+}
+
+.pagination-item {
+  @apply rounded-full ml-2 flex items-center justify-center outline-none;
+  width: 40px;
+  height: 40px;
+}
+
+/* .disabled {
+  @apply bg-[#F3F3F3] rounded-md w-10 h-10 flex justify-center items-center;
+} */
+
+.previous {
+  @apply bg-[#F3F3F3] rounded-md w-10 h-10 flex justify-center items-center;
+}
+
+.active {
+  @apply text-black;
+  /* border-radius: 20px; */
+}
+
+.next {
+  @apply rounded-md w-10 h-10 flex justify-center items-center bg-black;
 }
