@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/dist/client/link';
 import { useRouter } from 'next/dist/client/router';
 import Searchbar from './Searchbar';
+import { useSession } from 'next-auth/client';
 
 const Navbar = () => {
+  const [session, loading] = useSession();
   const router = useRouter();
+  const [input, setInput] = useState('');
+  const onSearch = (e) => {
+    e.preventDefault();
+
+    const term = input;
+
+    if (!term) return;
+
+    router.push(`/result?term=${term}`);
+  };
+
   return router.pathname === `/search` ? (
     <nav className="flex justify-end  w-full bg-white h-20  ">
       <div className="flex items-center px-16 cursor-pointer">
-        <div className=" h-9 w-9 rounded-full bg-gray-600"></div>
+        <div className=" h-9 w-9 rounded-full ">
+          <img src={session && session.user.image} alt="" />
+        </div>
         <div className="mr-2 ml-2">
-          <span>John Doe</span>
+          <span>{session && session.user.name}</span>
         </div>
         <div>
           <svg
@@ -35,14 +50,23 @@ const Navbar = () => {
           <img src="/logo.svg" alt="" />
         </div>
       </Link>
-      <div className="flex justify-center items-center sm:w-1/2 w-full">
-        <Searchbar width='w-full' height="h-[50px]" />
+      <div className="flex justify-center items-center sm:w-96 w-full">
+        <Searchbar
+          text={input}
+          change={(e) => setInput(e.target.value)}
+          gsearch={onSearch}
+          width="w-full"
+          w="w-[380px]"
+          height="h-[50px]"
+        />
       </div>
 
       <div className="sm:flex hidden items-center px-16 cursor-pointer">
-        <div className=" h-9 w-9 rounded-full bg-gray-600"></div>
+        <div className=" h-9 w-9 rounded-full ">
+          <img src={session && session.user.image} alt="" />
+        </div>
         <div className="mr-2 ml-2">
-          <span>John Doe</span>
+          <span>{session && session.user.name}</span>
         </div>
         <div>
           <svg
