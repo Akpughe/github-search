@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/dist/client/link';
 import { useRouter } from 'next/dist/client/router';
 import Searchbar from './Searchbar';
-import { useSession, getSession ,signOut } from 'next-auth/client';
+import { useSession, signOut } from 'next-auth/client';
 
 const Navbar = () => {
   const [session, loading] = useSession();
@@ -13,7 +13,6 @@ const Navbar = () => {
   const handleShow = () => {
     setShow(!show);
   };
-
 
   const onSearch = (e) => {
     e.preventDefault();
@@ -109,11 +108,3 @@ const Navbar = () => {
 
 export default Navbar;
 
-
-export async function getServerSideProps(context) {
-  return {
-    props: {
-      session: await getSession(context)
-    }
-  }
-}
