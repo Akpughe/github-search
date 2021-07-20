@@ -53,3 +53,39 @@ a {
 .next {
   @apply rounded-md w-10 h-10 flex justify-center items-center bg-black;
 }
+
+.bubble {
+  background-color: rgb(255, 255, 255);
+  /* border: 1px solid #333; */
+  @apply border ;
+  /* border-radius: 5px; */
+  color: #333;
+  display: inline-block;
+  font: 16px/24px sans-serif;
+  padding: 12px 24px;
+  position: relative;
+}
+.bubble:after,
+.bubble:before {
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 20px solid rgb(255, 255, 255);
+  transform: rotate(180deg);
+  bottom: 46px;
+  content: '';
+  left: 50%;
+  margin-left: 63px;
+  position: absolute;
+}
+
+/* Styling for second triangle (border) */
+.bubble:before {
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 23px solid;
+  border-top-color: inherit; /* Can't be included in the shorthand to work */
+  bottom: 46px;
+  margin-left: 62px;
+}
+
+
