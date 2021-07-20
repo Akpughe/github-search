@@ -29,7 +29,7 @@ const Navbar = () => {
       <nav className="flex justify-end  w-full bg-white h-20  ">
         <div className="flex items-center px-16 cursor-pointer">
           <div className=" h-9 w-9 rounded-full ">
-            {/* <img src={session && session.user.image} alt="" /> */}
+            <img src={session && session.user.image} alt="" />
           </div>
           <div className="mr-2 ml-2">
             <span>{session && session.user.name}</span>
@@ -82,10 +82,10 @@ const Navbar = () => {
 
       <div className="sm:flex hidden items-center px-16 cursor-pointer">
         <div className=" h-9 w-9 rounded-full ">
-          {/* <img src={session && session.user.image} alt="" /> */}
+          <img src={session && session.user.image} alt="" />
         </div>
         <div className="mr-2 ml-2">
-          {/* <span>{session && session.user.name}</span> */}
+          <span>{session && session.user.name}</span>
         </div>
         <div>
           <svg
